@@ -20,7 +20,7 @@ public class Startup
         services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
-       // services.AddControllersWithViews();
+        services.AddControllersWithViews();
       //  services.AddEndpointsApiExplorer();
       //  services.AddMvcCore().AddApiExplorer();
         services.AddSwaggerGen(options =>
@@ -29,7 +29,7 @@ public class Startup
             options.SwaggerDoc("v1", new OpenApiInfo
             {
                 Version = "v1",
-                Title = "Tweet API",
+                Title = "Tweet Book API",
                 Description = "An ASP.NET Core Web API for managing ToDo items"
             });
             options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
