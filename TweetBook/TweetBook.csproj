@@ -13,6 +13,17 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Namespaces\" />
+    <Folder Include="Options\" />
+  </ItemGroup>
+	
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
 </Project>

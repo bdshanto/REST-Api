@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace TweetBook.Controllers
+﻿namespace TweetBook.Controllers
 {
-    public class HomeController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    [Produces(MediaTypeNames.Application.Json)]
+    public class HomeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -10,10 +11,19 @@ namespace TweetBook.Controllers
         {
             _logger = logger;
         }
-        public IActionResult Index()
+
+        /// <summary>
+        /// Get the home page
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("Index")]
+        [Produces(MediaTypeNames.Application.Json)]
+        
+        public IActionResult Index(string name)
         {
-            return Ok("I'm alive!");
+            return Ok("Hello " + name);
         }
+        
 
         /*public IActionResult Index()
         {
