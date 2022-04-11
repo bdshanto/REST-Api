@@ -11,7 +11,6 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-TweetBook-19A3BF25-642A-430C-BF2F-0C5E9B168CAD")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TweetBook")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]

@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using TweetBook.Models;
 
 namespace TweetBook.Controllers
 {
@@ -13,7 +11,7 @@ namespace TweetBook.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        /*public IActionResult Index()
         {
             return View();
         }
@@ -27,6 +25,6 @@ namespace TweetBook.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        }*/
     }
 }
