@@ -19,7 +19,7 @@
         [HttpGet("Index")]
         [Produces(MediaTypeNames.Application.Json)]
         
-        public IActionResult Index(string name)
+        public IActionResult Index(string name="Sah")
         {
             return Ok("Hello " + name);
         }

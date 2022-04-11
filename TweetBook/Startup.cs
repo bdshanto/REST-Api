@@ -15,7 +15,7 @@ public class Startup
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(connectionString,
                 b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-        services.AddDatabaseDeveloperPageExceptionFilter();
+      //  services.AddDatabaseDeveloperPageExceptionFilter();
 
         services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -78,11 +78,10 @@ public class Startup
 
         app.UseEndpoints(endpoints =>
         {
-            endpoints.MapSwagger();
-            /*endpoints.MapControllerRoute(
+           endpoints.MapControllerRoute(
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}"
-            );*/
+            );
         });
     }
 }
