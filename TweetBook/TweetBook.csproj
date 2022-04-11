@@ -20,6 +20,7 @@
   <ItemGroup>
     <Folder Include="Namespaces\" />
     <Folder Include="Domain\" />
+    <Folder Include="Installers\" />
     <Folder Include="Options\" />
   </ItemGroup>
 	

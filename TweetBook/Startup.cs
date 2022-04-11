@@ -1,4 +1,6 @@
-﻿namespace TweetBook;
+﻿using TweetBook.Installers;
+
+namespace TweetBook;
 
 public class Startup
 {
@@ -11,35 +13,7 @@ public class Startup
 
     public void ConfigurationService(IServiceCollection services)
     {
-        var connectionString = Configuration.GetConnectionString("DefaultConnection");
-        services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(connectionString,
-                b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-      //  services.AddDatabaseDeveloperPageExceptionFilter();
-
-        services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-            .AddEntityFrameworkStores<ApplicationDbContext>();
-
-        services.AddControllersWithViews();
-      //  services.AddEndpointsApiExplorer();
-      //  services.AddMvcCore().AddApiExplorer();
-        services.AddSwaggerGen(options =>
-        {
-            // c.SwaggerDoc("v1", new Info { Title = "TweetBook API", Version = "v1" });
-            options.SwaggerDoc("v1", new OpenApiInfo
-            {
-                Version = "v1",
-                Title = "Tweet Book API",
-                Description = "An ASP.NET Core Web API for managing ToDo items"
-            });
-            options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
-            /*
-            // using System.Reflection;
-            var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
-            */
-        });
-        //services.AddSwaggerGenNewtonsoftSupport();
+        services.InstallerServices(Configuration);
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -78,9 +52,9 @@ public class Startup
 
         app.UseEndpoints(endpoints =>
         {
-           endpoints.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}"
+            endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}"
             );
         });
     }
