@@ -35,7 +35,6 @@ public class Startup
         app.UseSwagger(options =>
         {
             options.RouteTemplate = swaggerOptions.JsonRoute;
-            // options.SerializeAsV2 = true;*/
         });
 
         app.UseSwaggerUI(options =>
