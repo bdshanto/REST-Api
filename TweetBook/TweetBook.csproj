@@ -24,6 +24,7 @@
     <Folder Include="Namespaces\" />
     <Folder Include="Domain\" />
     <Folder Include="Installers\" />
+    <Folder Include="Services\" />
     <Folder Include="Options\" />
   </ItemGroup>
 	

@@ -1,4 +1,6 @@
-﻿namespace TweetBook.Installers;
+﻿using TweetBook.Services;
+
+namespace TweetBook.Installers;
 
 public class DbInstaller : IInstaller
 {
@@ -12,5 +14,7 @@ public class DbInstaller : IInstaller
 
         services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
+
+        services.AddSingleton<IPostService, PostService>();
     }
 }
